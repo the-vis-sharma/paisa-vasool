@@ -1,0 +1,92 @@
+<div
+  fxLayout="row"
+  fxLayoutAlign="space-evenly center"
+  fxLayoutAlign.xs="space-around stretch"
+  fxLayout.xs="column"
+  fxLayoutGap.xs="15px"
+  style="padding: 15px;"
+>
+  <mat-card
+    fxLayout="column"
+    fxLayoutAlign="space-evenly center"
+    fxFlex="24"
+    style="background-color: #9931b1; color: white;"
+  >
+    <div>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Budget"
+        style="font-size: 70px; margin-right: 35px; margin-right: 35px;"
+        >account_balance_wallet</mat-icon
+      >
+    </div>
+
+    <p style="font-size: 2em; font-weight: bold;">
+      {{ 567 | currency: "INR" }}
+    </p>
+    <p>Budget</p>
+  </mat-card>
+  <mat-card
+    fxLayout="column"
+    fxLayoutAlign="space-evenly center"
+    fxFlex="24"
+    style="background-color: #fd9a14; color: white;"
+  >
+    <div>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Per Day Expected"
+        style="font-size: 70px; margin-right: 35px;"
+        >insights</mat-icon
+      >
+    </div>
+
+    <p style="font-size: 2em; font-weight: bold;">
+      {{ 567 | currency: "INR" }}
+    </p>
+    <p>Safe to Spend (Per Day)</p>
+  </mat-card>
+  <mat-card
+    fxLayout="column"
+    fxLayoutAlign="space-evenly center"
+    fxFlex="24"
+    style="background-color: #e7615a; color: white;"
+  >
+    <div>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Total Spend This Month"
+        style="font-size: 70px; margin-right: 35px;"
+        >credit_card</mat-icon
+      >
+    </div>
+
+    <p style="font-size: 2em; font-weight: bold;">
+      {{ 567 | currency: "INR" }}
+    </p>
+    <p>Total Spend</p> </mat-card
+  ><mat-card
+    fxLayout="column"
+    fxLayoutAlign="space-evenly center"
+    fxFlex="24"
+    style="background-color: #47a34b; color: white;"
+  >
+    <div>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Remaining Amount"
+        style="font-size: 70px; margin-right: 35px;"
+        >speed</mat-icon
+      >
+    </div>
+
+    <p style="font-size: 2em; font-weight: bold;">
+      {{ 567 | currency: "INR" }}
+    </p>
+    <p>Remaining</p>
+  </mat-card>
+</div>
+<!-- Budget
+expected per day
+total spent this month
+remaning amount  -->

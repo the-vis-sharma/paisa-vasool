@@ -1,0 +1,22 @@
+<mat-list-item>
+  <div fxLayout="row" fxLayoutGap="10px" fxFlex>
+    <ngx-avatar
+      name="{{ friend.name }}"
+      size="40"
+      initialsSize="1"
+      src="{{ friend.image }}"
+      Position="left"
+    ></ngx-avatar>
+    <div
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+      fxLayoutGap="10px"
+      fxFlex
+    >
+      <div mat-line>{{ friend.name }}</div>
+      <button mat-stroked-button class="button-style" style="color: green;">
+        {{ friend.get | currency: "INR" }}
+      </button>
+    </div>
+  </div>
+</mat-list-item>

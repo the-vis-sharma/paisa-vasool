@@ -1,0 +1,12 @@
+<mat-expansion-panel
+  expanded="{{ first }}"
+  style="margin: 20px;"
+  *ngFor="let monthSpend of monthSpends | keyvalue; let first = first"
+>
+  <mat-expansion-panel-header>
+    <h4>{{ monthSpend.key }}</h4>
+  </mat-expansion-panel-header>
+
+  <!-- to pass value of the list use 'monthSpend.value' -->
+  <app-daily-spend [monthSpends]="monthSpend.value"></app-daily-spend>
+</mat-expansion-panel>

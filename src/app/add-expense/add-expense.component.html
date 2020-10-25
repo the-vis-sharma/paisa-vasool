@@ -1,0 +1,185 @@
+<!-- <mat-card style="height: 100%;">
+  <div>
+    <div>
+      <h2>Add Your Expensse</h2>
+    </div>
+    <form>
+      <div fxLayout="column" fxLayoutAlign="space-around stretch" *ngIf="!spitBetween" style="height: 40%;">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="What was the spend" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Amount" type="number" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="datetime-local" placeholder="Date and Time">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>categorie</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Description" />
+        </mat-form-field>
+
+        <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable"
+              (removed)="remove(fruit)">
+              {{fruit}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="New fruit..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
+              [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+              {{fruit}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <div ng-app="myApp" ng-controller="AppCtrl" layout-margin layout-padding> -->
+
+<!-- <choose-file layout="row" flex="25">
+          <input id="fileInput" type="file" class="ng-hide">
+          <md-input-container flex class="md-block">
+            <input type="text" ng-model="fileName" disabled>
+            <div class="hint">Select your file</div>
+          </md-input-container>
+          <div>
+            <md-button id="uploadButton" class="md-fab md-mini">
+              <md-icon class="material-icons">attach_file</md-icon>
+            </md-button>
+          </div>
+        </choose-file> -->
+
+<!-- </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <p>Expence</p>
+          <mat-slide-toggle></mat-slide-toggle>
+        </div>
+
+
+      </div>
+
+      <div *ngIf="spitBetween">
+
+        <div mat-subheader>Groups</div>
+        <mat-selection-list #shoes>
+          <mat-list-option *ngFor="let shoe of typesOfShoes">
+            {{shoe}}
+          </mat-list-option>
+        </mat-selection-list>
+        <div mat-subheader>Friends</div>
+        <mat-selection-list #shoes>
+          <mat-list-option *ngFor="let shoe of typesOfShoes">
+            {{shoe}}
+          </mat-list-option>
+        </mat-selection-list>
+
+
+        <div fxLayout="row" fxLayoutAlign="end center" *ngIf="spitBetween">
+          <button mat-raised-button color="primary" (click)="selectFriendGroup()">Back</button>
+          <button mat-raised-button color="primary" style="    margin-left: 30px;"
+            (click)="selectFriendGroup()">Done</button>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" style="margin-top: 20px; height: 10%;">
+        <button mat-raised-button color="primary" (click)="selectFriendGroup()">Next</button>
+      </div>
+    </form>
+  </div>
+</mat-card>
+ -->
+
+<mat-card style="height: 500px; width: 450px;">
+  <h2 style="margin-top: 0px;">Add Your Expensse</h2>
+  <form>
+    <div fxLayout="column" fxLayoutAlign="space-around stretch" *ngIf="!spitBetween" style="height: 40%;">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="What was the spend" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Amount" type="number" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="datetime-local" placeholder="Date and Time">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>categorie</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Description" />
+      </mat-form-field>
+
+      <mat-form-field class="example-chip-list">
+        <mat-chip-list #chipList aria-label="Fruit selection">
+          <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable"
+            (removed)="remove(fruit)">
+            {{fruit}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New fruit..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
+            [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+            {{fruit}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <p>Expence</p>
+        <mat-slide-toggle></mat-slide-toggle>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" style="margin-top: 20px; height: 10%;">
+        <button mat-raised-button color="primary" (click)="selectFriendGroup()">Next</button>
+      </div>
+    </div>
+
+
+    <div *ngIf="spitBetween">
+      <div style="height: 40%;">
+        <div mat-subheader style="padding: 0px;">Groups</div>
+        <mat-selection-list #shoes>
+          <mat-list-option *ngFor="let shoe of typesOfShoes">
+            {{shoe}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+
+      <div>
+        <div mat-subheader style="padding: 0px;">Friends</div>
+        <mat-selection-list #shoes>
+          <mat-list-option *ngFor="let shoe of typesOfShoes">
+            {{shoe}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+
+
+    </div>
+  </form>
+</mat-card>

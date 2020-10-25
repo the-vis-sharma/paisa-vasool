@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/paisa-vasool",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

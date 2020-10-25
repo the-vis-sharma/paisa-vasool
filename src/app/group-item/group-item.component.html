@@ -1,0 +1,26 @@
+<mat-list-item>
+  <div fxLayout="row" fxLayoutGap="10px">
+    <ngx-avatar
+      name="{{ group.name }}"
+      size="40"
+      initialsSize="1"
+      src="{{ group.image }}"
+    ></ngx-avatar>
+    <div fxLayout="column">
+      <div mat-line>{{ group.name }}</div>
+      <div
+        mat-line
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+        fxLayoutGap="10px"
+      >
+        <button mat-stroked-button color="warn" class="button-style">
+          {{ group.owe | currency: "INR" }}
+        </button>
+        <button mat-stroked-button style="color: green;" class="button-style">
+          {{ group.get | currency: "INR" }}
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-list-item>
