@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:10.22.1-alpine'
+            args '-p 4200:4200'
+        }
+    }
     stages {
         stage('Install') {
             steps {
