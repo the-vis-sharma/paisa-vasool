@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:10.22.1-alpine'
+            image 'thevishsharma/node-chrome:10.22.1-alpine'
             args '-p 4200:4200'
         }
     }

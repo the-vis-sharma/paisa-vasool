@@ -31,10 +31,11 @@ module.exports = function (config) {
          base:"ChromeHeadless",
          flags:[  
             "--no-sandbox",
-            // required to run without privileges in Docker 
-             "--disable-web-security",
+            "--disable-web-security",
             "--disable-gpu",
-            "--remote-debugging-port=9222"
+            "--remote-debugging-port=9222",
+            '--disable-extensions', 
+            '--no-proxy-server'
          ]
       }
    },
