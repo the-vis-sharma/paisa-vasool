@@ -25,8 +25,35 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers:{  
+      ChromeHeadlessNoSandbox:{  
+         base:"ChromeHeadless",
+         flags:[  
+            "--no-sandbox",
+            // required to run without privileges in Docker 
+             "--disable-web-security",
+            "--disable-gpu",
+            "--remote-debugging-port=9222"
+         ]
+      }
+   },
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    junitReporter:{  
+      // results will be saved as $outputDir/$browserName.xml 
+      outputDir:'test-reports',
+      // if included, results will be saved as $outputDir/$browserName/$outputFile 
+      outputFile:'junit-report.xml',
+      // suite will become the package name attribute in xml testsuite element 
+      suite:'',
+      // add browser name to report and classes names 
+      useBrowserName:false,
+      // function (browser, result) to customize the name attribute in xml testcase element 
+      nameFormatter:undefined,
+      // function (browser, result) to customize the classname attribute in xml testcase element 
+      classNameFormatter:undefined,
+      properties:{     }   // key value pair of properties to add to the section of the report
+   }
   });
 };
