@@ -9,8 +9,7 @@
     "test": "ng test  --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lint-fix": "ng lint --fix",
-    "firebase-deploy": "firebase deploy --token '$FIREBASE_TOKEN'"
+    "lint-fix": "ng lint --fix"
   },
   "private": true,
   "dependencies": {
