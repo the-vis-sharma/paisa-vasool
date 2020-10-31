@@ -1,9 +1,12 @@
 pipeline {
     agent {
         docker {
-            image 'thevishsharma/node-chrome:10.22.1-alpine'
+            image 'node:10.22.1-alpine'
             args '-p 4200:4200'
         }
+    }
+    environment {
+        FIREBASE_TOKEN = credentials('FIREBASE_TOKEN')
     }
     stages {
         stage('Install') {
@@ -11,18 +14,9 @@ pipeline {
                 sh 'npm i'
             }
         }
-        stage('Test') {
-            parallel {
-                stage('Lint Check') {
-                    steps {
-                        sh 'npm run-script lint'
-                    }
-                }
-                stage('Unit Test') {
-                    steps {
-                        sh 'npm run-script test'
-                    }
-                }
+        stage('Lint Check') {
+            steps {
+                sh 'npm run-script lint'
             }
         }
         stage('Build') {
@@ -32,7 +26,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'firebase deploy'
+                sh 'firebase deploy --token "$FIREBASE_TOKEN"'
             }
         }
     }
