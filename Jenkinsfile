@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'firebase deploy --token "$FIREBASE_TOKEN"'
+                sh 'npm run-script firebase-deploy'
             }
         }
     }
