@@ -45,6 +45,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -92,10 +94,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatChipsModule,
     MatDialogModule,
     MatSelectModule,
+    MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSlideToggleModule,
-    MatGridListModule
+    MatGridListModule,
+    ScrollingModule
   ],
   providers: [],
   entryComponents: [AddExpenseComponent],
