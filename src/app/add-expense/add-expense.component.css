@@ -1,28 +1,70 @@
-mat-radio-button:nth-child(2){
-  margin-right: 40px;
+.expense-cotainer {
+  height: 100%;
+  padding: 32px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  justify-content: center;
+  width: 70%;
+  margin: 40px auto;
 }
 
-.example-headers-align .mat-expansion-panel-header-title,
-.example-headers-align .mat-expansion-panel-header-description {
-  flex-basis: 0;
+.inline-div-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: row;
 }
 
-.example-headers-align .mat-expansion-panel-header-description {
+.inline-div-1 {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-}
-/* 
-.example-headers-align .mat-form-field + .mat-form-field {
-  margin-left: 8px;
-} */
-
-
-.example-radio-group {
-  display: flex;
-  flex-direction: column;
-  margin: 15px 0;
+  flex-wrap: wrap;
+  flex-flow: row;
 }
 
-.example-radio-button {
-  margin: 5px;
+.inline-radio {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-columns: 16% 60%;
+  padding: 16px 0px 16px 20px;
+}
+
+::ng-deep .mat-form-field-appearance-outline ::ng-deep .mat-form-field-outline {
+  top: 0.8em !important;
+}
+
+.group-list {
+  /* border: 2px solid; */
+  /* border: 1px outset; */
+  display: grid;
+  /* grid-template-columns: 10% 70% 5%; */
+  grid-template-columns: 6% 85% 4%;
+  width: 100%;
+  grid-gap: 1em;
+}
+
+.amount-group-list {
+  display: grid;
+  grid-template-columns: 5% 30% 40% 5%;
+  width: 100%;
+  grid-gap: 1.5em;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+::ng-deep .input {
+  padding: 13px !important;
+}
+
+::ng-deep .mat-form-field {
+  width: 100% !important;
+}
+
+::ng-deep .mat-drawer-content {
+  background-color: #ffffff !important;
 }

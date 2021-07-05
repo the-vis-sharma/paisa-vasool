@@ -1,18 +1,11 @@
-<div fxLayout="column" fxLayoutGap="10px" style="min-width: 250px;">
+<div fxLayout="column" fxLayoutGap="10px" style="min-width: 250px">
   <div fxLayoutAlign="center center">
-    <ngx-avatar
-      size="80"
-      initialsSize="1"
-      src="https://lh3.googleusercontent.com/ogw/ADGmqu8YzF6VrcT6Sn57cZv1ZnzLwg6KMrHynsZbA6Gt9es=s83-c-mo"
-      s
-    >
+    <ngx-avatar size="80" initialsSize="1" src="{{ user?.profilePicUrl }}" s>
     </ngx-avatar>
   </div>
   <div fxLayout="column" fxLayoutAlign="center center">
-    <label style="font-weight: normal;">User Name</label>
-    <label style="padding: 10px; font-weight: normal;"
-      >user-email@mail.com</label
-    >
+    <label style="font-weight: normal">{{ user?.name }}</label>
+    <label style="padding: 10px; font-weight: normal">{{ user?.email }}</label>
   </div>
   <div>
     <mat-divider></mat-divider>
@@ -32,7 +25,8 @@
     <button
       mat-stroked-button
       class="button-style"
-      style="margin-top: 10px; margin-bottom: 10px;"
+      style="margin-top: 10px; margin-bottom: 10px"
+      (click)="signOut()"
     >
       Sign out
     </button>

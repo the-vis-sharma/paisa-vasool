@@ -1,0 +1,9 @@
+.inline-div-1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+::ng-deep .mat-form-field {
+  width: 100%;
+}

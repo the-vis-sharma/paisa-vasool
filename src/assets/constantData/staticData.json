@@ -1,0 +1,574 @@
+{
+    "groups": [
+        {
+            "groupId": "G1",
+            "name": "Manali Trip 1",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ],
+            "members": []
+        },
+        {
+            "groupId": "G2",
+            "name": "Month Grocery 2",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G3",
+            "name": "Shopping 3",
+            "image": "",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 2,
+            "member": [
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G4",
+            "name": "Manali Trip",
+            "image": "data:image/jpeg;base64,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",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G5",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G6",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G7",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G8",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G9",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G10",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G11",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        }
+    ],
+    "friends": [
+        {
+            "id": "1",
+            "name": "vishnu",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632",
+            "owe": "2000",
+            "get": "1000"
+        },
+        {
+            "id": "2",
+            "name": "Ranu",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        },
+        {
+            "id": "3",
+            "name": "Usha",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        },
+        {
+            "id": "4",
+            "name": "Friend 1",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        },
+        {
+            "id": "5",
+            "name": "Friend 1",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        },
+        {
+            "id": "6",
+            "name": "Friend 1",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        },
+        {
+            "id": "7",
+            "name": "Friend 1",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        },
+        {
+            "id": "8",
+            "name": "Friend 1",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-'valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000"
+        },
+        {
+            "id": "9",
+            "name": "Friend 1",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley' -of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        }
+    ],
+    "Categories": [
+        {
+            "category": "food",
+            "value": "food"
+        },
+        {
+            "category": "drink",
+            "value": "drink"
+        },
+        {
+            "category": "shopping",
+            "value": "shopping"
+        },
+        {
+            "category": "transtion",
+            "value": "transtion"
+        },
+        {
+            "category": "enteranimnt",
+            "value": "enteranimnt"
+        },
+        {
+            "category": "party",
+            "value": "party"
+        },
+        {
+            "category": "others",
+            "value": "others"
+        }
+    ],
+    "sidemeanuFriend": [
+        {
+            "id": "1",
+            "name": "vishnu",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632",
+            "owe": "2000",
+            "get": "1000"
+        },
+        {
+            "id": "2",
+            "name": "Ranu",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        },
+        {
+            "id": "3",
+            "name": "Usha",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": "2000",
+            "get": "1000",
+            "email": "friend1@gmail.com",
+            "phoneNO": "9414056632"
+        }
+    ],
+    "sidemeanuGroup": [
+        {
+            "groupId": "G1",
+            "name": "Manali Trip",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ],
+            "members": []
+        },
+        {
+            "groupId": "G2",
+            "name": "Month Grocery",
+            "image": "https: //static.india.com/wp-content/uploads/2018/08/The-road-from-Manali-to-Rohtang-Pass-the-valley-of-Spiti-and-Leh-Himachal-Pradesh-India.jpg?impolicy=Medium_Resize&w=1200&h=800",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 6,
+            "member": [
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu",
+                "Vishnu",
+                "Ranu"
+            ]
+        },
+        {
+            "groupId": "G3",
+            "name": "Shopping",
+            "image": "",
+            "owe": 2000,
+            "get": 1000,
+            "memberCount": 2,
+            "member": [
+                "Vishnu",
+                "Ranu"
+            ]
+        }
+    ],
+    "tags": [
+        "cloths",
+        "food",
+        "ok",
+        "others"
+    ],
+    "spendList": [
+        {
+            "totalAmount": 400,
+            "descrption": "Dominos dinner",
+            "dateTime": "Thu Jun 10 2021 00:47:46 GMT+0530",
+            "category": "Food",
+            "tags": "food",
+            "isExpense": true,
+            "groupId": "G1",
+            "friends": [
+                "rauu",
+                "shanu"
+            ],
+            "myAmount": 200,
+            "paidById": "1",
+            "paidByName": "Vishnu"
+        },
+        {
+            "totalAmount": 400,
+            "descrption": "Dominos dinner",
+            "dateTime": "Thu Jun 10 2021 00:47:46 GMT+0530",
+            "category": "Food",
+            "tags": "food",
+            "isExpense": true,
+            "groupId": "G1",
+            "friends": [
+                "rauu",
+                "shanu"
+            ],
+            "myAmount": 200,
+            "paidById": "1",
+            "paidByName": "usha"
+        },
+        {
+            "totalAmount": 400,
+            "descrption": "Dominos dinner",
+            "dateTime": "Thu Jun 10 2021 00:47:46 GMT+0530",
+            "category": "Food",
+            "tags": "food",
+            "isExpense": true,
+            "groupId": "G1",
+            "friends": [
+                "rauu",
+                "shanu"
+            ],
+            "myAmount": 200,
+            "paidById": "1",
+            "paidByName": "Vishnu"
+        },
+        {
+            "totalAmount": 400,
+            "descrption": "Dominos dinner",
+            "dateTime": "Thu Jun 10 2021 00:47:46 GMT+0530",
+            "category": "Food",
+            "tags": "food",
+            "isExpense": true,
+            "groupId": "G1",
+            "friends": [
+                "rauu",
+                "shanu"
+            ],
+            "myAmount": 200,
+            "paidById": "1",
+            "paidByName": "Vishnu"
+        }
+    ]
+}

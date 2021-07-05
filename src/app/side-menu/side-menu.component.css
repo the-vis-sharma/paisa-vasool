@@ -23,3 +23,6 @@
 .button-style {
   padding: 0px 6px;
 }
+::ng-deep .mat-drawer-content {
+  overflow: hidden !important;
+}

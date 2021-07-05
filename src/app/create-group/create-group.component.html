@@ -1,0 +1,79 @@
+<div class="create-group-cotainer">
+  <h3 style="justify-content: center; display: flex">Create Group</h3>
+  <form>
+    <div class="add-group">
+      <div class="inline-div-1">
+        <mat-form-field appearance="outline">
+          <mat-label>Group Name</mat-label>
+          <input matInput type="text" name="spendTitle" />
+          <!-- <mat-icon matPreffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 12px;
+        "
+      >
+        <div style="display: flex">
+          <mat-icon style="padding-right: 30px; font-size: 21px" matPrefix>
+            lock
+          </mat-icon>
+          <p style="margin-bottom: 0px">Public</p>
+        </div>
+
+        <mat-slide-toggle></mat-slide-toggle>
+      </div>
+
+      <div>
+        <div>
+          <div style="margin-bottom: 12px">
+            <mat-label>Select Friend Name</mat-label>
+          </div>
+          <div class="friends">
+            <mat-list class="scrollable-element">
+              <mat-list-item *ngFor="let friend of friendList">
+                <div class="group-list">
+                  <ngx-avatar
+                    name="{{ friend.name }}"
+                    size="40"
+                    initialsSize="1"
+                    src="{{ friend.image }}"
+                    LayoutGap="10"
+                  >
+                  </ngx-avatar>
+                  <div>
+                    {{ friend.name }}
+                    <p style="font-size: 0.8em">
+                      {{ friend.email }}
+                    </p>
+                    <!-- <p *ngIf="group.memberCount <= 1" style="font-size: 0.8em;">{{ friend.phoneNo }} -->
+                  </div>
+                  <section fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-checkbox (change)="selectdFriend($event, friend.id)">
+                    </mat-checkbox>
+                  </section>
+                </div>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
+      </div>
+
+      <div style="float: right; margin-top: 24px">
+        <button
+          mat-raised-button
+          color="secondary"
+          [routerLink]="['/home']"
+          style="margin-right: 8px"
+        >
+          Cancel
+        </button>
+        <button mat-raised-button color="primary" [routerLink]="['/home']">
+          Create Group
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

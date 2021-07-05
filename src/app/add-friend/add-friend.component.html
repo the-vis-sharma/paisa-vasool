@@ -1,0 +1,39 @@
+<div>
+  <p>
+    Please Enter e-mail of your friend whom you want to invite on Paisa Vasool
+  </p>
+  <form [formGroup]="emailForm">
+    <div>
+      <div class="inline-div-1">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="text"
+            name="spendTitle"
+            formControlName="spendTitle"
+          />
+        </mat-form-field>
+      </div>
+
+      <div style="float: right">
+        <button
+          mat-raised-button
+          color="secondary"
+          [mat-dialog-close]="true"
+          style="margin-right: 8px"
+        >
+          Cancel
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          [mat-dialog-close]="true"
+          [disabled]="!emailForm.valid"
+        >
+          Send Invite
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

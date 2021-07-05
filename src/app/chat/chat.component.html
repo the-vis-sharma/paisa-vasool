@@ -1,0 +1,93 @@
+<div class="chat-container">
+
+    <form [formGroup]="msgForm">
+        <div>
+            <div>
+
+                <mat-toolbar class="group-title">
+
+                    <div style="display: flex;gap: 8px;">
+                        <ngx-avatar name="Faltu Group" size="40" initialsSize="1" src="" LayoutGap="10">
+                        </ngx-avatar>
+                        <span style="text-transform: capitalize;">Faltu Group</span>
+                    </div>
+
+
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+
+                </mat-toolbar>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Group</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                        <mat-icon>edit</mat-icon>
+                        <span>Edit Group</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>settings</mat-icon>
+                        <span>Setting</span>
+                    </button>
+                </mat-menu>
+
+            </div>
+
+            <div class="msg-window">
+
+                <div *ngFor="let msg of msgList" style="padding: 8px;">
+                    <mat-card class="chat-box" [ngClass]=" msg.paidByName == 'usha' ?  'reciver' :' sender'">
+                        <div class="chat-title">
+                            <p style="text-transform: capitalize;">{{msg.descrption}}</p>
+                            <button mat-icon-button color="primary">
+                                <mat-icon>arrow_drop_down</mat-icon>
+                            </button>
+                        </div>
+                        <div class="amount-box">
+                            <div fxLayout="column" fxLayoutAlign="center center">
+                                <p style="font-size: x-small; margin: 0px; text-transform: capitalize;">
+                                    Total Spend
+                                </p>
+                                <button mat-stroked-button>
+                                    {{ msg.totalAmount | currency: "INR" }}
+                                </button>
+                            </div>
+
+                            <div fxLayout="column" fxLayoutAlign="center center">
+                                <p style="font-size: x-small; margin: 0px; text-transform: capitalize;">
+                                    your Share
+                                </p>
+                                <button mat-stroked-button>
+                                    {{ msg.myAmount | currency: "INR" }}
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+
+                            <div>
+                                <p style="margin: 0px; padding-top: 8px;font-size: 0.8em;">Paid By</p>
+                                <span style="    font-size: 1em;">{{msg.paidByName}}</span>
+                            </div>
+                            <div>
+                                <p style="margin: 0px;padding-top: 8px;font-size: 0.8em;">Date Time</p>
+                                <span style="    font-size: 1em;">{{msg.dateTime | date: 'dd/MM/yyyy'}}</span>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+
+            </div>
+        </div>
+        <div class="chat">
+
+            <input type="text" formControlName="msg">
+            <button mat-icon-button color="primary" (click)="sendMsg()">
+                <!-- <mat-icon>home</mat-icon> -->
+                <mat-icon>send</mat-icon>
+            </button>
+
+        </div>
+    </form>
+</div>

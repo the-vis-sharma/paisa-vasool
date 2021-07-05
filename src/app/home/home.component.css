@@ -7,11 +7,3 @@
   flex-direction: column-reverse;
   align-items: center;
 }
-
-/* ::ng-deep .mat-dialog-content {
-     height: 0px !important;
-} */
-/* .mat-dialog-container{
-  height: 0px;
-} */
-

@@ -1,25 +1,24 @@
-<mat-expansion-panel expanded>
+<mat-expansion-panel expanded disabled>
   <mat-expansion-panel-header style="padding-left: 0px;">
     <mat-panel-title>
       <div mat-subheader fxLayout="row" fxLayoutAlign="space-between center">
         <p style="color: black;">{{ headerText }}</p>
       </div>
     </mat-panel-title>
+    <span><a style="color: #4e72dc; text-decoration: none;" *ngIf="headerText == 'Groups'"
+        [routerLink]="['/create-group']">Create
+        Group</a></span>
+    <span><a style="color: #4e72dc; text-decoration: none;" *ngIf="headerText == 'Friends'" (click)="addFriend()">Add
+        Friend</a></span>
   </mat-expansion-panel-header>
-  <div *ngIf="headerText == 'Groups'; else friendsBlock">
-    <app-group-item
-      *ngFor="let group of listItems"
-      [group]="group"
-    ></app-group-item>
+  <div *ngIf=" headerText=='Groups' ; else friendsBlock">
+    <app-group-item *ngFor="let group of listItems" [group]="group"></app-group-item>
   </div>
   <ng-template #friendsBlock>
-    <app-friend-item
-      *ngFor="let friend of listItems"
-      [friend]="friend"
-    ></app-friend-item>
+    <app-friend-item *ngFor="let friend of listItems" [friend]="friend"></app-friend-item>
   </ng-template>
   <div fxLayout="row" fxLayoutAlign="end center">
-    <button mat-button color="accent">
+    <button mat-button color="accent" (click)="seeAll(headerText)">
       See All
     </button>
   </div>

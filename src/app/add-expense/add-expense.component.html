@@ -1,65 +1,67 @@
-<div>
-  <div fxLayout="row" fxLayoutAlign="start center">
-    <button mat-icon-button color="primary" (click)="backtoExpensseForm()" *ngIf="spitBetween">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-    <h3 style="margin-top: 0px; padding-left: 10px;">Add Your Expensse</h3>
-  </div>
+<div class="expense-cotainer">
+  <h3 style="justify-content: center;display: flex;">Add Your Expensse</h3>
+  <form [formGroup]="expenceForm">
+    <div *ngIf="showExpenceForm">
+      <div class="inline-div-2">
+        <mat-form-field appearance="outline">
+          <mat-label>What was this spend for</mat-label>
+          <input matInput type="text" name="spendTitle" formControlName="spendTitle">
+          <!-- <mat-icon matPreffix>sentiment_very_satisfied</mat-icon> -->
+        </mat-form-field>
 
-  <form>
-    <div fxLayout="column" fxLayoutAlign="space-around stretch" *ngIf="!spitBetween" style="height: 40%;">
-
-      <mat-form-field>
-        <mat-icon matPrefix style="padding-right: 30px;">subject</mat-icon>
-        <input matInput placeholder="What was this spend for" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-icon matPrefix style="padding-right: 30px;">attach_money</mat-icon>
-        <input matInput placeholder="Enter Amount" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-icon matPrefix style="padding-right: 30px;">event</mat-icon>
-        <input matInput type="datetime-local" placeholder="Choose Date" value="Today { currentDate | date:'shortTime'">
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-icon matPrefix style="padding-right: 30px;">style</mat-icon>
-        <mat-label>Select Categorie</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{ food.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-icon matPrefix style="padding-right: 30px;">local_offer</mat-icon>
-        <mat-chip-list #chipList aria-label="Fruit selection">
-          <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable"
-            (removed)="remove(fruit)">
-            {{fruit}}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <input placeholder="Tag your spend" #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
-            [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-            (matChipInputTokenEnd)="add($event)">
-        </mat-chip-list>
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-          <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
-            {{fruit}}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Enter Amount</mat-label>
+          <input matInput type="text" formControlName="spendAmout">
+        </mat-form-field>
+      </div>
 
 
-      <mat-form-field>
-        <mat-icon matPrefix style="padding-right: 30px;">edit</mat-icon>
-        <input matInput placeholder="Description" />
-      </mat-form-field>
+      <div class="inline-div-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Choose Date</mat-label>
+          <!-- <input matInput type="datetime-local" formControlName="spendCreateDate"
+            value="Today { currentDate | date:'shortTime'"> -->
+          <input matInput [matDatepicker]="spendCreateDate" formControlName="spendCreateDate">
+          <mat-datepicker-toggle matSuffix [for]="spendCreateDate">
+          </mat-datepicker-toggle>
+          <mat-datepicker #spendCreateDate></mat-datepicker>
+        </mat-form-field>
 
-      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field appearance="outline">
+          <mat-label>Select Categorie</mat-label>
+          <mat-select id="category" formControlName="catagory">
+            <mat-option [value]="category.value" *ngFor="let category of headings.Categories">
+              {{ category.category }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+      </div>
+
+      <div class="inline-div-1">
+        <mat-form-field appearance="outline">
+          <mat-label>Tags</mat-label>
+          <mat-chip-list #chipList>
+            <mat-chip *ngFor="let tag of tags" [selectable]="selectable" [removable]="removable"
+              (removed)="remove(tag)">
+              {{tag}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Item tags..." name="tag" #tagInput formControlName="tag" [matAutocomplete]="auto"
+              [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+              {{tag}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+
+      <div class="inline-div-1" style="padding-left: 40px; padding-right: 40px;">
         <div fxLayout="row">
           <mat-icon *ngIf="isExpence" style="padding-right: 30px; font-size: 21px;" matPrefix>account_balance_wallet
           </mat-icon>
@@ -72,46 +74,198 @@
           </div>
         </div>
 
-        <mat-slide-toggle [checked]="isExpence" (change)="isExpence = $event.source.checked"></mat-slide-toggle>
-      </div>
-      <div>
+        <mat-slide-toggle formControlName="expenceType" [checked]="isExpence"
+          (change)="isExpence = $event.source.checked"></mat-slide-toggle>
 
       </div>
-      <div fxLayout="row" fxLayoutAlign="end center" style="margin-top: 20px; height: 10%;">
-        <button mat-raised-button color="primary" (click)="selectFriendGroup()">Next</button>
+
+      <div fxLayout="row" fxLayoutAlign="end center" style="height: 6em; padding-right: 40px;">
+        <button mat-raised-button color="primary" (click)="nextToSplit()">Next</button>
       </div>
     </div>
 
+    <div *ngIf="showSplitBetween">
+      <div class="inline-radio">
+        <label>Split Between</label>
+        <mat-radio-group aria-label="Select an option" style="display: flex; justify-content: space-evenly;"
+          (change)="getSplitBetween($event.value)">
+          <mat-radio-button [checked]="true" value="friend">Friends</mat-radio-button>
+          <mat-radio-button value="group">Group</mat-radio-button>
+        </mat-radio-group>
+      </div>
 
-    <mat-accordion class="example-headers-align" *ngIf="spitBetween">
-      <p>Choose your friends or group where you want to split the amount</p>
-      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Groups
-          </mat-panel-title>
-          <mat-icon>keyboard_arrow_down</mat-icon>
-        </mat-expansion-panel-header>
-        <div *ngFor="let season of typesOfShoes">
-          {{season}}
-          <mat-radio-button>
-          </mat-radio-button>
-        </div>
-      </mat-expansion-panel>
+      <div *ngIf="showGroupList">
+        <mat-list class="scrollable-element">
+          <mat-list-item *ngFor="let group of groupList">
+            <div class="group-list">
+              <ngx-avatar name="{{ group.name }}" size="40" initialsSize="1" src="{{ group.image }}" LayoutGap="10">
+              </ngx-avatar>
+              <div>{{ group.name }}
+                <p *ngIf=" group.memberCount > 4" style="font-size: 0.8em;">
+                  {{ getGroupMmeber(group.members) }} and {{group.memberCount - 1}} others
+                </p>
+                <!-- <p *ngIf="group.memberCount < 4" style="font-size: 0.8em;">{{ group.members }} -->
+              </div>
+              <mat-radio-button (change)="getGroupId($event.value)" fxLayout="row" fxLayoutAlign="space-around center"
+                [value]="group.groupId">
+              </mat-radio-button>
+            </div>
 
-      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>Frineds</mat-panel-title>
-          <mat-icon>keyboard_arrow_down</mat-icon>
-        </mat-expansion-panel-header>
-        <mat-selection-list>
-          <mat-list-option *ngFor="let shoe of typesOfShoes">
-            {{shoe}}
-          </mat-list-option>
-        </mat-selection-list>
-      </mat-expansion-panel>
-    </mat-accordion>
+          </mat-list-item>
+        </mat-list>
+      </div>
 
+
+      <div *ngIf="showFriendList">
+        <mat-list class="scrollable-element">
+          <mat-list-item *ngFor="let friend of friendList">
+            <div class="group-list">
+              <ngx-avatar name="{{ friend.name }}" size="40" initialsSize="1" src="{{ friend.image }}" LayoutGap="10">
+              </ngx-avatar>
+              <div>{{ friend.name }}
+                <p style="font-size: 0.8em;">
+                  {{friend.email}}
+                </p>
+                <!-- <p *ngIf="group.memberCount <= 1" style="font-size: 0.8em;">{{ friend.phoneNo }} -->
+              </div>
+              <section fxLayout="row" fxLayoutAlign="space-around center">
+                <mat-checkbox (change)="selectdFriend($event, friend.id)">
+                </mat-checkbox>
+              </section>
+            </div>
+
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="end center" style="margin-top: 20px; height: 10%; margin-right: 20px;">
+        <button mat-raised-button color="secndory"
+          (click)="showSplitBetween = false; showExpenceForm = true; showSplitAmount= false"
+          style="margin-right: 20px">Back</button>
+        <button mat-raised-button color="primary" (click)="splitAmount()">Next</button>
+      </div>
+
+
+
+    </div>
+
+    <div *ngIf="showSplitAmount">
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" style="margin-bottom: 20px;">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="font-weight: bold;">
+              Paid By
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div>
+            <div>
+              <mat-form-field appearance="outline" style="width: 100%;" class="mdc-text-field--no-label">
+                <mat-icon matPrefix style="padding-right: 30px;">search</mat-icon>
+                <input matInput placeholder="Search">
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-list class="scrollable-element" style="padding-right: 32px; padding-left: 32px;">
+                <mat-list-item *ngFor="let friend of selectedFriedList">
+                  <div class="amount-group-list">
+                    <ngx-avatar name="{{ friend.name }}" size="40" initialsSize="1" src="{{ friend.image }}">
+                    </ngx-avatar>
+                    <div>{{ friend.name }}
+                      <p style="font-size: 0.8em;">
+                        {{friend.email}}
+                      </p>
+                      <!-- <p *ngIf="group.memberCount <= 1" style="font-size: 0.8em;">{{ friend.phoneNo }} -->
+
+                    </div>
+                    <!-- <section class="example-section"> -->
+                    <!-- <mat-form-field appearance="outline" id="amountInput">
+                      </mat-form-field> -->
+                    <input placeholder="Amount" style="width: 8em;
+    height: 32px;
+     padding: 8px;">
+                    <!-- </section> -->
+                    <section class="example-section" fxLayout="row" fxLayoutAlign="space-around center">
+                      <mat-checkbox (click)="selectdValue($event)" class="example-margin"></mat-checkbox>
+                    </section>
+                  </div>
+
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="font-weight: bold;">
+              Split
+            </mat-panel-title>
+            <mat-panel-description>
+              <p>
+
+                Total Amount 400
+              </p>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div style="width: 90%;margin-left: 15px;">
+            <mat-form-field appearance="outline" style="width: 100%;" class="mdc-text-field--no-label">
+              <mat-icon matPrefix style="padding-right: 30px;">search</mat-icon>
+              <input matInput placeholder="Search">
+            </mat-form-field>
+          </div>
+          <div style="padding-left: 20px">
+            <mat-form-field style="width: 90%;">
+              <mat-label>Split</mat-label>
+              <mat-select>
+                <mat-option>Equilly</mat-option>
+                <mat-option>Unequaily</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-list style="padding-right: 32px; padding-left: 32px;">
+              <mat-list-item *ngFor="let friend of selectedFriedList">
+                <div class="amount-group-list">
+                  <ngx-avatar name="{{ friend.name }}" size="40" initialsSize="1" src="{{ friend.image }}">
+                  </ngx-avatar>
+                  <div>{{ friend.name }}
+                    <p style="font-size: 0.8em;">
+                      {{friend.email}}
+                    </p>
+                    <!-- <p *ngIf="group.memberCount <= 1" style="font-size: 0.8em;">{{ friend.phoneNo }} -->
+
+                  </div>
+                  <section class="example-section">
+                    <!-- <mat-form-field appearance="outline" class="mdc-text-field--no-label" id="amountInput">
+                      <input matInput placeholder="Amount">
+                    </mat-form-field> -->
+                    <input placeholder="Amount" style="width: 8em;
+                        height: 32px;
+                        border-radius: 16px; padding: 8px;">
+                  </section>
+                  <section class="example-section" fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-checkbox class="example-margin"></mat-checkbox>
+                  </section>
+                </div>
+
+              </mat-list-item>
+            </mat-list>
+          </div>
+
+
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+      <div fxLayout="row" fxLayoutAlign="end center" style="margin-top: 20px; height: 10%; margin-right: 20px;">
+        <button mat-raised-button color="secndory"
+          (click)="showSplitBetween = true; showExpenceForm = false; showSplitAmount= false"
+          style="margin-right: 20px">Back</button>
+        <button mat-raised-button color="primary" (click)="splitAmount()">Next</button>
+      </div>
+    </div>
 
   </form>
 </div>

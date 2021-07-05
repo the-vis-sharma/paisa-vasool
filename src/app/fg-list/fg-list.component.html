@@ -1,0 +1,101 @@
+<div class="group-list">
+  <div *ngFor="let group of groupList" class="list-layout">
+    <mat-card (click)="gotoChat(group.groupId)">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <ngx-avatar
+          name="{{ group.name }}"
+          size="40"
+          initialsSize="1"
+          src="{{ group.image }}"
+        ></ngx-avatar>
+        <div fxLayout="column">
+          <!-- <div mat-line>{{ group.name }}</div> -->
+          <div mat-line>
+            <a
+              style="
+                color: #0b2dea;
+                font-weight: 500;
+                touch-action: auto;
+                text-decoration: none;
+                text-transform: capitalize;
+              "
+              >{{ group.name }}</a
+            >
+          </div>
+          <mat-card-subtitle *ngIf="group.memberCount > 4">
+            {{ getGroupMmeber(group.member) }} and
+            {{ group.memberCount - 1 }} others
+          </mat-card-subtitle>
+          <mat-card-subtitle *ngIf="group.memberCount < 4">
+            {{ getGroupMmeber(group.member) }}
+          </mat-card-subtitle>
+          <div
+            mat-line
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+            fxLayoutGap="10px"
+          >
+            <button mat-stroked-button color="warn" class="button-style">
+              {{ group.owe | currency: "INR" }}
+            </button>
+            <button
+              mat-stroked-button
+              style="color: green"
+              class="button-style"
+            >
+              {{ group.get | currency: "INR" }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div *ngFor="let friend of friendList" class="list-layout">
+    <mat-card (click)="gotoChat(friend.id)" style="height: 70px">
+      <div fxLayout="row" fxLayoutGap="10px" fxFlex>
+        <ngx-avatar
+          name="{{ friend.name }}"
+          size="40"
+          initialsSize="1"
+          src="{{ friend.image }}"
+          Position="left"
+        >
+        </ngx-avatar>
+        <div
+          fxLayout="row"
+          fxLayoutAlign="space-between center"
+          fxLayoutGap="10px"
+          fxFlex
+        >
+          <div mat-line>
+            <a
+              style="
+                color: #0b2dea;
+                font-weight: 500;
+                touch-action: auto;
+                text-decoration: none;
+                text-transform: capitalize;
+              "
+              >{{ friend.name }}</a
+            >
+          </div>
+          <button mat-stroked-button class="button-style" style="color: green">
+            {{ friend.get | currency: "INR" }}
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="fab-container">
+    <button
+      mat-fab
+      color="primary"
+      style="margin-right: 20px"
+      (click)="addNew()"
+    >
+      <mat-icon size="50">add</mat-icon>
+    </button>
+  </div>
+</div>

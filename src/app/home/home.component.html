@@ -1,10 +1,5 @@
-<div
-  fxLayout="row"
-  fxLayout.xs="column"
-  fxLayoutGap.xs="10px"
-  fxLayoutAlign="space-around center"
-  style="padding: 15px"
->
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="10px" fxLayoutAlign="space-around center"
+  style="padding: 15px">
   <app-spend-analysis-chart fxFlex="48"></app-spend-analysis-chart>
   <app-category-analysis-chart fxFlex="48"></app-category-analysis-chart>
 </div>
@@ -15,12 +10,7 @@
   <app-monthly-spend></app-monthly-spend>
 </div>
 <div class="fab-container">
-  <button
-    mat-fab
-    color="primary"
-    style="margin-right: 20px"
-    (click)="openDialog()"
-  >
+  <button mat-fab color="primary" style="margin-right: 20px" [routerLink]="['add-expense']">
     <mat-icon size="50">add</mat-icon>
   </button>
 </div>
