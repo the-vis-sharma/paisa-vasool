@@ -1,22 +1,11 @@
 <mat-list-item style="height: 70px">
-  <div fxLayout="row" fxLayoutGap="10px" fxFlex>
-    <ngx-avatar
-      name="{{ friend.name }}"
-      size="40"
-      initialsSize="1"
-      src="{{ friend.image }}"
-      Position="left"
-    >
+  <div class="friendList">
+    <ngx-avatar name="{{ friend.name }}" size="40" initialsSize="1" src="{{ friend.profilePicUrl }}" Position="left">
     </ngx-avatar>
-    <div
-      fxLayout="row"
-      fxLayoutAlign="space-between center"
-      fxLayoutGap="10px"
-      fxFlex
-    >
+    <div class="test">
       <div mat-line style="text-transform: capitalize">{{ friend.name }}</div>
       <button mat-stroked-button class="button-style" style="color: green">
-        {{ friend.get | currency: "INR" }}
+        {{ 890}}
       </button>
     </div>
   </div>

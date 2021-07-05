@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { AuthService } from "../services/auth.service";
 import { User } from "../Models/user.model";
 
@@ -8,16 +8,15 @@ import { User } from "../Models/user.model";
   styleUrls: ["./profile-sheet.component.css"],
 })
 export class ProfileSheetComponent implements OnInit {
-  public user: User;
+  @Input() user: User;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.user = this.authService.getLocalStrorage();
-    // this.authService.getUserSubscription().subscribe((user: User) => {
-    //   this.user = user;
+    // console.log("profile call here user : ", this.user)
+    // this.authService.getUserSubscription().subscribe((currentUser: User) => {
+    //   this.user = currentUser;
     // });
-    console.log("ab user kya AATA : ", this.user);
   }
 
   signOut() {

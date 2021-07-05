@@ -16,8 +16,6 @@ import { isNgTemplate } from '@angular/compiler';
 })
 export class AuthService {
   user$: Observable<User>;
-  userData: any;
-  public user: User;
 
   constructor(
     private fireAuth: AngularFireAuth,
@@ -50,7 +48,6 @@ export class AuthService {
       userData.phoneNumber = user.phoneNumber;
       this.createUser(userData, userRef);
     } else {
-      userData.id = user.uid;
       userData.profilePicUrl = user.photoURL;
       this.updateUserData(userData, userRef);
     }
@@ -60,10 +57,6 @@ export class AuthService {
     userRef
       .set({ ...userData }, { merge: true })
       .then((response) => {
-        this.getUserSubscription().subscribe((user: User) => {
-          console.log("yha pr user kya h 2 : ", user);
-          this.addLocalStorage(user);
-        });
         this.router.navigate(["app"]);
       })
       .catch((error) => {
@@ -75,10 +68,6 @@ export class AuthService {
     userRef
       .update({ ...userData })
       .then((response) => {
-        this.getUserSubscription().subscribe((user: User) => {
-          console.log("yha pr user kya h 1 : ", user);
-          this.addLocalStorage(user);
-        });
         this.router.navigate(["app"]);
       })
       .catch((error) => {
@@ -108,30 +97,13 @@ export class AuthService {
     );
   }
 
-  addLocalStorage(user: User) {
-    user.friends[0].get().then((friend) => {
-      console.log("friend: ", friend.data());
-    });
-    this.user.friends.map(item = > i)
-    console.log("in addLocalStorage : ", user);
-    localStorage.setItem("userId", user.id);
-    localStorage.setItem("email", user.email);
-    localStorage.setItem("phoneNumber", user.phoneNumber);
-    localStorage.setItem("profilePicUrl", user.profilePicUrl);
-    localStorage.setItem("createDate", JSON.stringify(user.createDate));
-    localStorage.setItem("friends", JSON.stringify(user.friends));
-    localStorage.setItem("groups", JSON.stringify(user.groups));
+  saveUserLocalStorage(user: User) {
+    // userDB.friends.forEach(friendRef => {
+    //   friendRef.get().then(friendDoc => {
+    //     currentUser.friends.push({ id: friendDoc.id, ...friendDoc.data(), friends: [], groups: [] } as User);
+    //   });
+    // });
+
   }
 
-  getLocalStrorage() {
-    user: User;
-    this.user.id = localStorage.getItem("userId");
-    this.user.id = localStorage.getItem("email");
-    this.user.id = localStorage.getItem("phoneNumber");
-    this.user.id = localStorage.getItem("profilePicUrl");
-    this.user.createDate = JSON.parse(localStorage.getItem("createDate"));
-    this.user.friends = JSON.parse(localStorage.getItem("friends"));
-    this.user.groups = JSON.parse(localStorage.getItem("groups"));
-    return this.user;
-  }
 }

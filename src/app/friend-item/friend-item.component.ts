@@ -1,11 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../Models/user.model';
 
-export interface Section {
-  name: string;
-  image: string;
-  owe: number;
-  get: number;
-}
 
 @Component({
   selector: 'app-friend-item',
@@ -13,9 +8,9 @@ export interface Section {
   styleUrls: ['./friend-item.component.css'],
 })
 export class FriendItemComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  @Input() friend: Section;
+  @Input() friend: User;
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

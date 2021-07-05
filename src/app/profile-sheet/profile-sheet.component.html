@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="10px" style="min-width: 250px">
   <div fxLayoutAlign="center center">
-    <ngx-avatar size="80" initialsSize="1" src="{{ user?.profilePicUrl }}" s>
+    <ngx-avatar size="80" initialsSize="1" src="{{ user?.profilePicUrl }}">
     </ngx-avatar>
   </div>
   <div fxLayout="column" fxLayoutAlign="center center">
@@ -22,12 +22,7 @@
     <mat-divider></mat-divider>
   </div>
   <div fxLayoutAlign="center center">
-    <button
-      mat-stroked-button
-      class="button-style"
-      style="margin-top: 10px; margin-bottom: 10px"
-      (click)="signOut()"
-    >
+    <button mat-stroked-button class="button-style" style="margin-top: 10px; margin-bottom: 10px" (click)="signOut()">
       Sign out
     </button>
   </div>

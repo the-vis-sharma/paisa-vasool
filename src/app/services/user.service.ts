@@ -6,7 +6,7 @@ import { User } from "../Models/user.model";
   providedIn: "root",
 })
 export class UserService {
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore) { }
 
   getAllUserDetails() {
     return this.firestore.collection("user").snapshotChanges();
@@ -24,4 +24,5 @@ export class UserService {
   deleteUser(userId: string) {
     this.firestore.doc("user/" + userId).delete();
   }
+
 }

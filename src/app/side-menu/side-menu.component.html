@@ -1,81 +1,41 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-  >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-list>
       <button mat-menu-item>
         <span style="font-weight: 500">Home</span>
       </button>
 
-      <app-side-menu-list-item
-        *ngFor="let menuItem of sideMenuList"
-        [headerText]="menuItem.header"
-        [listItems]="menuItem.list"
-      ></app-side-menu-list-item>
+      <app-side-menu-list-item *ngFor="let menuItem of sideMenuList" [headerText]="menuItem.header"
+        [listItems]="menuItem.list"></app-side-menu-list-item>
     </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar
-      color="primary"
-      fxLayout="row wrap"
-      fxLayoutAlign="space-between center"
-      [ngStyle]="sideMenuDEsign()"
-    >
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
+    <mat-toolbar color="primary" fxLayout="row wrap" fxLayoutAlign="space-between center" [ngStyle]="sideMenuDEsign()">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span
-        ><a
-          style="text-decoration: none; color: #ffffff"
-          [routerLink]="['home']"
-          >Paisa Vasool</a
-        ></span
-      >
+      <span><a style="text-decoration: none; color: #ffffff" [routerLink]="['home']">Paisa Vasool</a></span>
 
       <app-search-bar fxFlex="40" *ngIf="!deviceSize"></app-search-bar>
 
       <div>
-        <button
-          mat-icon-button
-          aria-label="Notification"
-          [matMenuTriggerFor]="notifcationMenu"
-        >
-          <mat-icon aria-hidden="false" aria-label="Example home icon"
-            >notifications</mat-icon
-          >
+        <button mat-icon-button aria-label="Notification" [matMenuTriggerFor]="notifcationMenu">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">notifications</mat-icon>
         </button>
-        <mat-menu
-          #notifcationMenu="matMenu"
-          xPosition="before"
-          style="min-width: 300px"
-        >
+        <mat-menu #notifcationMenu="matMenu" xPosition="before" style="min-width: 300px">
           <app-notification-sheet></app-notification-sheet>
         </mat-menu>
 
-        <button
-          mat-icon-button
-          aria-label="Profile"
-          [matMenuTriggerFor]="profileMenu"
-        >
-          <mat-icon aria-hidden="false" aria-label="Account Icon"
-            >account_circle
+        <button mat-icon-button aria-label="Profile" [matMenuTriggerFor]="profileMenu">
+          <mat-icon aria-hidden="false" aria-label="Account Icon">account_circle
           </mat-icon>
         </button>
         <mat-menu #profileMenu="matMenu" xPosition="before">
-          <app-profile-sheet></app-profile-sheet>
+          <app-profile-sheet [user]="user"></app-profile-sheet>
         </mat-menu>
       </div>
       <app-search-bar fxFlex="90" *ngIf="deviceSize"></app-search-bar>

@@ -1,21 +1,18 @@
 <div class="create-group-cotainer">
   <h3 style="justify-content: center; display: flex">Create Group</h3>
-  <form>
+  <form [formGroup]="groupForm">
     <div class="add-group">
       <div class="inline-div-1">
         <mat-form-field appearance="outline">
           <mat-label>Group Name</mat-label>
-          <input matInput type="text" name="spendTitle" />
-          <!-- <mat-icon matPreffix>sentiment_very_satisfied</mat-icon> -->
+          <input matInput type="text" name="spendTitle" formControlName="groupName" />
         </mat-form-field>
       </div>
-      <div
-        style="
+      <div style="
           display: flex;
           justify-content: space-between;
           margin-bottom: 12px;
-        "
-      >
+        ">
         <div style="display: flex">
           <mat-icon style="padding-right: 30px; font-size: 21px" matPrefix>
             lock
@@ -23,7 +20,7 @@
           <p style="margin-bottom: 0px">Public</p>
         </div>
 
-        <mat-slide-toggle></mat-slide-toggle>
+        <mat-slide-toggle formControlName="visibility"></mat-slide-toggle>
       </div>
 
       <div>
@@ -35,13 +32,8 @@
             <mat-list class="scrollable-element">
               <mat-list-item *ngFor="let friend of friendList">
                 <div class="group-list">
-                  <ngx-avatar
-                    name="{{ friend.name }}"
-                    size="40"
-                    initialsSize="1"
-                    src="{{ friend.image }}"
-                    LayoutGap="10"
-                  >
+                  <ngx-avatar name="{{ friend.name }}" size="40" initialsSize="1" src="{{ friend.profilePicUrl }}"
+                    LayoutGap="10">
                   </ngx-avatar>
                   <div>
                     {{ friend.name }}
@@ -62,15 +54,10 @@
       </div>
 
       <div style="float: right; margin-top: 24px">
-        <button
-          mat-raised-button
-          color="secondary"
-          [routerLink]="['/home']"
-          style="margin-right: 8px"
-        >
+        <button mat-raised-button color="secondary" [routerLink]="['/home']" style="margin-right: 8px">
           Cancel
         </button>
-        <button mat-raised-button color="primary" [routerLink]="['/home']">
+        <button mat-raised-button color="primary" (click)="createGroup()">
           Create Group
         </button>
       </div>

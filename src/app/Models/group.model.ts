@@ -2,10 +2,10 @@ import { DocumentReference } from "@angular/fire/firestore";
 
 export class Group {
   name?: string;
-  createdDate?: Date;
+  createdDate: Date;
   iconUrl?: string;
-  members?: DocumentReference[];
-  owner?: DocumentReference;
-  visibility?: boolean;
-  anonymous?: string;
+  members: DocumentReference[];
+  owner: DocumentReference;
+  visibility: boolean;
+  anonymous: string;
 }
